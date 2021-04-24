@@ -6,6 +6,8 @@ import DrawerContent from './screens/common/DrawerContent';
 
 import Registration from './screens/authentication/Registration';
 import Login from './screens/authentication/Login';
+import ForgotPassword from './screens/authentication/ForgotPassword';
+import ChangePassword from './screens/authentication/ChangePassword';
 import Dashboard from './screens/user/Dashboard';
 import Notifications from './screens/user/Notifications';
 import ProfileStep from './screens/user';
@@ -64,6 +66,8 @@ function App() {
           }}>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Registration" component={Registration} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+          <Stack.Screen name="ChangePassword" component={ChangePassword} />
           <Stack.Screen name="User" component={User} />
           <Stack.Screen name="Notifications" component={Notifications} />
         </Stack.Navigator>

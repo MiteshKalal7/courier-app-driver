@@ -216,6 +216,13 @@ class Login extends React.Component {
   };
 
   render() {
+    const param = this.props.route.params;
+    if (param !== undefined) {
+      if (param.screen !== undefined) {
+        this.showSnackbar(param.message, true);
+        param.screen = undefined;
+      }
+    }
     const login = () => {
       Keyboard.dismiss();
       if (this.state.username === '') {
@@ -362,7 +369,10 @@ class Login extends React.Component {
                   marginTop: 10,
                   marginHorizontal: 10,
                 }}>
-                <TouchableOpacity onPress={() => console.log('om')}>
+                <TouchableOpacity
+                  onPress={() =>
+                    this.props.navigation.navigate('ForgotPassword')
+                  }>
                   <Text style={{color: colors.textLight}}>
                     Forgot Password?
                   </Text>
